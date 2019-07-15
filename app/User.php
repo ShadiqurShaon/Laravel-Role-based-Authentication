@@ -5,11 +5,14 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+// use Ultraware\Roles\Traits\HasRoleAndPermission;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
+    use EntrustUserTrait;
+    // use Notifiable, HasRoleAndPermission;
     /**
      * The attributes that are mass assignable.
      *
