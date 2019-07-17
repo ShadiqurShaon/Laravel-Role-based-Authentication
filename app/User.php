@@ -18,6 +18,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+
+    public function identities() 
+    {
+         return $this->hasMany('App\SocialIdentity');
+    }
     protected $fillable = [
         'name', 'email', 'password',
     ];
