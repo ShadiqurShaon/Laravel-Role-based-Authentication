@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-
+Route::get('2fa', 'TwoFactorController@showTwoFactorForm');
+Route::post('2fa', 'TwoFactorController@verifyTwoFactor');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('hello',function(){
     return "This is a hello";
